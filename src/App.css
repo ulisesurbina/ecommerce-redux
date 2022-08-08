@@ -67,3 +67,46 @@ cursor: pointer;
   opacity: 90%;
   text-align: center;
 }
+/* //PRODUCT DETAIL */
+.DetailContainer {
+  display: flex;
+}
+.ImgDetail {
+  margin:20px;
+}
+.ImgDetail img {
+  max-height: 400px;
+  object-fit: contain;
+}
+.InfoDetail {
+  margin:20px;
+  text-align:justify;
+}
+.ImgSuggested {
+  height: 400px;
+  width: 400px;
+}
+.SuggestedProducts {
+  display: flex;
+  align-items: center;
+  margin:auto;
+}
+.SuggestedProducts h3{
+  margin-right: 2rem;
+}
+/* //COUNTER */
+.Counter {
+  display: flex;
+  text-align: center;
+}
+.Counter h3 {
+  margin-right: 10px;
+  text-align: center;
+}
+.Counter button {
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #9dddb0;
+  opacity: 80%;
+  text-align: center;
+}

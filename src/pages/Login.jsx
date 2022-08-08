@@ -20,16 +20,12 @@ const Login = () => {
                 <Button variant="danger" type="submit">
                     Login
                 </Button>
-                <hr />
+                <hr></hr>
                 <h5>Are you new to Acazon?</h5>
                 <Button variant="light" type="submit">
                     Create your account
                 </Button>
             </Form>
-
-            <div>
-
-            </div>
         </div>
     );
 };

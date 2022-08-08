@@ -28,7 +28,7 @@ const Home = () => {
         <div>
             <br />
             <Row className="m-0">
-                <div className="">
+                <div>
                     <h1>Welcome to Acazon.com.mx</h1>
                     <h4>Our most popular products.</h4>
                 </div>
@@ -72,8 +72,7 @@ const Home = () => {
                                 </div>
                             ))
                         }
-                    </Row>
-                    
+                    </Row> 
                 </Col>
             </Row>
         </div>
@@ -81,11 +80,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{/* <Form.Select className="container mb-3">
-                <option value="">Select a category</option>
-                {categories?.map((category) => (
-                    <option key={category.id} 
-                    onClick={() => dispatch(filterCategoryThunk(category.id))} value="">{category.name}</option>
-                ))}
-            </Form.Select> */}

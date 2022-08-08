@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import PurchasesCard from '../components/PurchasesCard';
 import { getPurchasesThunk } from '../store/slices/purchases.slice';
-import { Table } from 'react-bootstrap';
 
 const Purchases = () => {
 
