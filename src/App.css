@@ -87,7 +87,11 @@ cursor: pointer;
   width: 50%;
 }
 .ImgSuggested {
-  width: 100%;
+  width:fit-content;
+  height: 300px;
+}
+.ImgSuggested img {
+  height: 100%;
 }
 .SuggestedProducts {
   display: flex;
@@ -113,4 +117,9 @@ cursor: pointer;
   background-color: #9dddb0;
   opacity: 80%;
   text-align: center;
+}
+/* //SHOPPING CART */
+.ButtonShoppingCart {
+  margin:0;
+  padding:0;
 }

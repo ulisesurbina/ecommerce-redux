@@ -6,6 +6,7 @@ import { LoadingScreen, NavBar } from './components';
 import Footer from './components/Footer';
 import ProtectedRoutes from './components/ProtectedRoutes';
 
+
 function App() {
 
   const isLoading = useSelector(state => state.isLoading)
