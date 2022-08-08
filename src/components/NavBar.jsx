@@ -12,7 +12,7 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto SectionNav">
                         <Nav.Link href="/#/"><i className="fa-solid fa-house"></i> Home</Nav.Link>
-                        <Nav.Link href="/#/puchases"><i class="fa-solid fa-basket-shopping"></i> Purchases</Nav.Link>
+                        <Nav.Link href="/#/purchases"><i class="fa-solid fa-basket-shopping"></i> Purchases</Nav.Link>
                         <Nav.Link href="/#/login"><i className="fa-solid fa-right-to-bracket"></i> Login</Nav.Link>
                         <Nav.Link><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</Nav.Link>
                     </Nav>
