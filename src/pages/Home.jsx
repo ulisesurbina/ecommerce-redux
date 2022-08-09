@@ -48,6 +48,9 @@ const Home = () => {
                 <Col lg={3} style={{ marginTop: "1.5rem" }}>
                     <ListGroup className="m-3">
                         <ListGroup.Item style={{ background: "#3E3F3A", color: "white" }}>Categories</ListGroup.Item>
+                        <ListGroup.Item 
+                        onClick={() => dispatch(getProductsThunk())} 
+                        style={{ background: "#9dddb0", cursor: "pointer" }}>Show All</ListGroup.Item>
                         {categories?.map((category) => (
                             <ListGroup.Item style={{ background: "#9dddb0", cursor: "pointer" }} key={category.id}
                                 onClick={() => dispatch(filterCategoryThunk(category.id))}>{category.name}</ListGroup.Item>

@@ -1,16 +1,15 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 const ProtectedRoutes = () => {
 
-    const user = useSelector(state => state.user)
+    const token = localStorage.getItem("token")
 
 		// Aquí va la condición. Puede ser una condición de cualquier tipo. Lo que 
 		// Importa es que valide si el usuario está loggeado o no
-    if(user !== ""){
+    if(token !== ""){
         return <Outlet />
     } else { 
-        return <Navigate to='/puchases' />
+        return <Navigate to='/login' />
     }                     // Aquí le debemos decir la ruta a la que queremos llevar
 };                        // al usuario si no está autenticado
 

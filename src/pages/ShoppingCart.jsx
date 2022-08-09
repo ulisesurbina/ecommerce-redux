@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Offcanvas } from 'react-bootstrap';
 
-const options = [
-    {
-      name: 'Enable both scrolling & backdrop',
-      scroll: true,
-      backdrop: true,
-    }
-  ];
-
 const ShoppingCart = () => {
     const [show, setShow] = useState(false);
 
@@ -25,8 +17,7 @@ const ShoppingCart = () => {
                         <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        Some text as placeholder. In real life you can have the elements you
-                        have chosen. Like, text, images, lists, etc.
+                        
                     </Offcanvas.Body>
                 </Offcanvas>
         </div>
