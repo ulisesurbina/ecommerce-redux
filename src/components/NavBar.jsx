@@ -27,7 +27,7 @@ const NavBar = () => {
                         {token ? (
                             <Nav.Link as={Button} bg="dark" pd="2rem" variant="dark" onClick={logOut}><i className="fa-solid fa-right-to-bracket"></i> Log Out</Nav.Link>
                         ) : (
-                            <Nav.Link href="/#/login"><i className="fa-solid fa-right-to-bracket"></i> Login</Nav.Link>
+                            <Nav.Link href="/#/login"><i className="fa-solid fa-right-to-bracket"></i> Log In</Nav.Link>
                         )
                         }
                         <Nav.Link><ShoppingCart /></Nav.Link>

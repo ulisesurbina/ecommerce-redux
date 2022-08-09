@@ -39,8 +39,9 @@ cursor: pointer;
 }
 /* //PURCHASES */
 .ListPurchases{
- width: 50%;
+ width: 60%;
  margin:auto;
+ text-align: center;
 }
 .TablePurchases th{
   min-width: 4rem;

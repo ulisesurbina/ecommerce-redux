@@ -5,31 +5,33 @@ const PurchasesCard = (purchase) => {
 
 
     console.log(purchase.purchase.cart.products)
+    // console.log(purchas)
 
     return (
         <div className="ListPurchases">
-                <ul style={{ padding: "0" }}>
+            {/* <ul style={{ padding: "0" }}> */}
+            <h4>{purchase.purchase.createdAt.slice(0,10)}</h4>
+            <Table striped bordered hover variant="dark" className="container TablePurchases" >
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Brand</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {
                         purchase.purchase.cart.products.map((product) => (
-                            <Table striped bordered hover variant="dark" className="container TablePurchases" key={product.id}>
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Brand</th>
-                                        <th>Price</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{product.title}</td>
-                                        <td>{product.brand}</td>
-                                        <td>${product.price}</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
+                            <tr key={product.id}>
+                                <td>{product.title}</td>
+                                <td>{product.brand}</td>
+                                <td>${product.price}</td>
+                            </tr>
                         ))
                     }
-                </ul>
+                </tbody>
+            </Table>
+            {/* </ul> */}
         </div>
     );
 };

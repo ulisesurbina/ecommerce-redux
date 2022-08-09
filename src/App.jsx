@@ -19,9 +19,9 @@ function App() {
         <Route path="/products/:id" element={<ProductsDetail />} />
         <Route path="/login" element={<Login />} />
         
-        {/* <Route element={<ProtectedRoutes />}> */}
+        <Route element={<ProtectedRoutes />}>
           <Route path="/purchases" element={<Purchases />} />
-        {/* </Route> */}
+        </Route>
 
       </Routes>
       <Footer />
