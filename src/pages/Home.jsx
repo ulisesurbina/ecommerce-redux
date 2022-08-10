@@ -27,7 +27,7 @@ const Home = () => {
     return (
         <div>
             <br />
-            
+
             <Row className="m-0">
                 <div>
                     <h1>Welcome to Acazon.com.mx</h1>
@@ -48,13 +48,19 @@ const Home = () => {
                 <Col lg={3} style={{ marginTop: "1.5rem" }}>
                     <ListGroup className="m-3">
                         <ListGroup.Item style={{ background: "#3E3F3A", color: "white" }}>Categories</ListGroup.Item>
-                        <ListGroup.Item 
-                        onClick={() => dispatch(getProductsThunk())} 
-                        style={{ background: "#9dddb0", cursor: "pointer" }}>Show All</ListGroup.Item>
+                        <ListGroup.Item
+                            onClick={() => dispatch(getProductsThunk())}
+                            style={{ background: "#9dddb0", cursor: "pointer" }}>Show All</ListGroup.Item>
                         {categories?.map((category) => (
                             <ListGroup.Item style={{ background: "#9dddb0", cursor: "pointer" }} key={category.id}
                                 onClick={() => dispatch(filterCategoryThunk(category.id))}>{category.name}</ListGroup.Item>
                         ))}
+                    </ListGroup>
+                    <ListGroup className="m-3">
+                        <ListGroup.Item style={{ background: "#3E3F3A", color: "white" }}>Price</ListGroup.Item>
+                        <ListGroup.Item style={{ background: "#9dddb0", cursor: "pointer" }}>$200.00 - $800.00</ListGroup.Item>
+                        <ListGroup.Item style={{ background: "#9dddb0", cursor: "pointer" }}>$800.00 - $1500.00</ListGroup.Item>
+                        <ListGroup.Item style={{ background: "#9dddb0", cursor: "pointer" }}>$1100.00 - $2000.00</ListGroup.Item>
                     </ListGroup>
                 </Col>
                 <Col>
@@ -76,7 +82,7 @@ const Home = () => {
                                 </div>
                             ))
                         }
-                    </Row> 
+                    </Row>
                 </Col>
             </Row>
         </div>

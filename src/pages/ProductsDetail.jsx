@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Carousel, Col, Row } from 'react-bootstrap';
+import { Button, Carousel, Col, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getProductsThunk } from '../store/slices/products.slice';
@@ -9,6 +9,7 @@ const ProductsDetail = () => {
     const allProducts = useSelector(state => state.products);
     const [productDet, setProductDet] = useState({});
     const [suggestedProducts, setSuggestedProducts] = useState([]);
+    const [qualityProd, setQualityProd] = useState("");
 
     const { id } = useParams();
     const dispatch = useDispatch();
@@ -37,6 +38,14 @@ const ProductsDetail = () => {
     const decrement = () => {
         setCounter(counter - 1)
     }
+    const addToCart = () => {
+        alert("añadido al carro")
+        const quality = {
+            id: productDet.id,
+            quantity: counter
+        }
+        console.log(quality)
+    }
 
     return (
         <div>
@@ -54,6 +63,7 @@ const ProductsDetail = () => {
                         <button onClick={increment}><i className="fa-solid fa-angle-up"></i></button>
                         <button onClick={decrement}><i className="fa-solid fa-angle-down"></i></button>
                     </div>
+                    <Button onClick={addToCart} style={{ color: "black" }} variant="success">Add to car</Button>
                     <hr />
                     <h6>{productDet?.description}</h6>
                 </div>
