@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Offcanvas } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getShoppingCartThunk } from '../store/slices/shoppingCart.slice';
+import { buyCartThunk, getShoppingCartThunk } from '../store/slices/shoppingCart.slice';
 
 const ShoppingCart = () => {
 
@@ -23,8 +23,21 @@ const ShoppingCart = () => {
     }
 
     useEffect(() => {
-        dispatch(getShoppingCartThunk());
+        dispatch(getShoppingCartThunk())
     }, [])
+
+    const getTotal = () => {
+        let total = 0;
+        shoppingCart.forEach((product) => {
+            total += Number(product.price * product.productsInCart.quantity)
+        })
+        return total
+    }
+
+    const buyCart = () => {
+        dispatch(buyCartThunk())
+        navigate("/purchases")
+    }
 
     // console.log(shoppingCart)
 
@@ -43,12 +56,14 @@ const ShoppingCart = () => {
                             shoppingCart.map(product => (
                                 <div className="container m-2 p-2 ShoppingCart" key={product.id} onClick={() => navigate(`/products/${product.id}`)}>
                                     <h5>{product.title}</h5>
-                                    <h6>$ {product.price}</h6>
-                                    <button>Delete</button>
-                                    <button>Buy</button>
+                                    <h5>{product.productsInCart.quantity} Pza(s)</h5>
+                                    <h6>Subtotal $ {product.price * product.productsInCart.quantity}</h6>
+                                    <Button>Delete</Button>
                                 </div>
                             ))
                         }
+                        <h5>Total: ${getTotal()}</h5>
+                        <Button onClick={buyCart}>Buy</Button>
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>

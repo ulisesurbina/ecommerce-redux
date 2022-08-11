@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import { Button, Card, Col, Form, InputGroup, ListGroup, Row } from 'react-bootstrap';
 import axios from 'axios';
+import { addShoppingCartThunk } from '../store/slices/shoppingCart.slice';
+
 
 const Home = () => {
 
@@ -13,13 +15,22 @@ const Home = () => {
     const [searchProduct, setSearchProduct] = useState("");
     const [categories, setCategories] = useState();
 
-    const products = useSelector(state => state.products)
+    const products = useSelector(state => state.products);
 
     useEffect(() => {
         dispatch(getProductsThunk());
         axios.get("https://ecommerce-api-react.herokuapp.com/api/v1/products/categories/")
             .then(res => setCategories(res.data.data.categories))
     }, [])
+
+    const addToCart = id => {
+        const quality = {
+            id: id,
+            quantity: 1
+        }
+        dispatch(addShoppingCartThunk(quality))
+        console.log(quality)
+    }
 
     // console.log(searchProduct)
     console.log(categories)
@@ -67,18 +78,22 @@ const Home = () => {
                     <Row xs={1} md={2} lg={3} className="g-4 m-3 ContainerProducts">
                         {
                             products.map(product => (
-                                <div key={product.id} onClick={() => navigate(`/products/${product.id}`)}>
-                                    <Col>
-                                        <Card className="ContainerCard">
-                                            <Card.Img className="ContainerImg" variant="top" src={product.productImgs} />
-                                            <Card.Body className="ContainerInfo">
-                                                <Card.Title><b>{product.title}</b></Card.Title>
-                                                <Card.Text><b>$ {product.price}</b></Card.Text>
-                                            </Card.Body>
-                                            <Button style={{ color: "black" }} variant="success">Add to car</Button>
-                                            <Button style={{ color: "black" }} variant="danger">Buy now</Button>
-                                        </Card>
-                                    </Col>
+                                <div>
+                                    <div key={product.id} onClick={() => navigate(`/products/${product.id}`)}>
+                                        <Col>
+                                            <Card className="ContainerCard">
+                                                <Card.Img className="ContainerImg" variant="top" src={product.productImgs} />
+                                                <Card.Body className="ContainerInfo">
+                                                    <Card.Title><b>{product.title}</b></Card.Title>
+                                                    <Card.Text><b>$ {product.price}</b></Card.Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+                                    </div>
+                                    <div>
+                                        <Button onClick={() => addToCart(product.id)} style={{ color: "black" }} variant="success">Add to car</Button>
+                                        <Button style={{ color: "black" }} variant="danger">Buy now</Button>
+                                    </div>
                                 </div>
                             ))
                         }

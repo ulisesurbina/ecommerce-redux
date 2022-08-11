@@ -5,7 +5,6 @@ const PurchasesCard = (purchase) => {
 
 
     console.log(purchase.purchase.cart.products)
-    // console.log(purchas)
 
     return (
         <div className="ListPurchases">
@@ -14,6 +13,7 @@ const PurchasesCard = (purchase) => {
             <Table striped bordered hover variant="dark" className="container TablePurchases" >
                 <thead>
                     <tr>
+                        <th>Quality</th>
                         <th>Product</th>
                         <th>Brand</th>
                         <th>Price</th>
@@ -23,6 +23,7 @@ const PurchasesCard = (purchase) => {
                     {
                         purchase.purchase.cart.products.map((product) => (
                             <tr key={product.id}>
+                                <td>{product.productsInCart.quantity} Pza(s)</td>
                                 <td>{product.title}</td>
                                 <td>{product.brand}</td>
                                 <td>${product.price}</td>
