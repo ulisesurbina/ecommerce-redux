@@ -10,7 +10,7 @@ const ProductsDetail = () => {
     const allProducts = useSelector(state => state.products);
     const [productDet, setProductDet] = useState({});
     const [suggestedProducts, setSuggestedProducts] = useState([]);
-    
+
 
     const { id } = useParams();
     const dispatch = useDispatch();
@@ -61,13 +61,15 @@ const ProductsDetail = () => {
                     <hr />
                     <h3><b>Price: $ {productDet?.price}</b></h3>
                     <div className="Counter">
-                        <h3><b>Quality:</b> {counter} Pza(s)</h3>
+                        <h3><b>Quantity:</b> {counter}</h3>
                         <button onClick={increment}><i className="fa-solid fa-angle-up"></i></button>
                         <button onClick={decrement}><i className="fa-solid fa-angle-down"></i></button>
                     </div>
-                        <Button onClick={addToCart} style={{ color: "black" }} variant="success">Add to car</Button>
-                        <hr />
-                        <h6>{productDet?.description}</h6>
+                    <div className="ButtonAddtoCart">
+                        <Button onClick={addToCart} style={{ color: "black" }} variant="danger">Add to car</Button>
+                    </div>
+                    <hr />
+                    <h6>{productDet?.description}</h6>
                 </div>
             </div>
             <div className="SuggestedProducts container">

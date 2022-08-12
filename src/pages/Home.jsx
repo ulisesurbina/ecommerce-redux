@@ -67,12 +67,12 @@ const Home = () => {
                                 onClick={() => dispatch(filterCategoryThunk(category.id))}>{category.name}</ListGroup.Item>
                         ))}
                     </ListGroup>
-                    <ListGroup className="m-3">
+                    {/* <ListGroup className="m-3">
                         <ListGroup.Item style={{ background: "#3E3F3A", color: "white" }}>Price</ListGroup.Item>
                         <ListGroup.Item style={{ background: "#9dddb0", cursor: "pointer" }}>$200.00 - $800.00</ListGroup.Item>
                         <ListGroup.Item style={{ background: "#9dddb0", cursor: "pointer" }}>$800.00 - $1500.00</ListGroup.Item>
                         <ListGroup.Item style={{ background: "#9dddb0", cursor: "pointer" }}>$1100.00 - $2000.00</ListGroup.Item>
-                    </ListGroup>
+                    </ListGroup> */}
                 </Col>
                 <Col>
                     <Row xs={1} md={2} lg={3} className="g-4 m-3 ContainerProducts">
@@ -90,9 +90,9 @@ const Home = () => {
                                             </Card>
                                         </Col>
                                     </div>
-                                    <div>
-                                        <Button onClick={() => addToCart(product.id)} style={{ color: "black" }} variant="success">Add to car</Button>
-                                        <Button style={{ color: "black" }} variant="danger">Buy now</Button>
+                                    <div className="ContainerInfoButton">
+                                        <Button onClick={() => addToCart(product.id)} style={{ color: "black" }} variant="success"><i class="fa-solid fa-cart-shopping"></i></Button>
+                                        {/* <Button style={{ color: "black" }} variant="danger">Buy now</Button> */}
                                     </div>
                                 </div>
                             ))

@@ -36,6 +36,12 @@ const Login = () => {
                 <h1><img src={logo} alt='' />Acazon.com.mx</h1>
             </div>
             <Form onSubmit={handleSubmit(submit)} className="FormLogin" style={{ background: "#3E3F3A", color: "white" }}>
+                <div>
+                    <div className="UserRecomended">
+                        <h4>User: ulises@gmail.com</h4>
+                        <h4>Password: 123456</h4>
+                    </div>
+                </div>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" {...register("email")} />
