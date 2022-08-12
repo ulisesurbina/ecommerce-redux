@@ -58,7 +58,7 @@ const ShoppingCart = () => {
                                     <h5>{product.title}</h5>
                                     <h5>{product.productsInCart.quantity} Pza(s)</h5>
                                     <h6>Subtotal $ {product.price * product.productsInCart.quantity}</h6>
-                                    <Button>Delete</Button>
+                                    {/* <Button>Delete</Button> */}
                                 </div>
                             ))
                         }
