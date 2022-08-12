@@ -39,6 +39,7 @@ const ProductsDetail = () => {
     const decrement = () => {
         setCounter(counter - 1)
     }
+    
     const addToCart = () => {
         // alert("añadido al carro")
         const quality = {
@@ -63,7 +64,7 @@ const ProductsDetail = () => {
                     <div className="Counter">
                         <h3><b>Quantity:</b> {counter}</h3>
                         <button onClick={increment}><i className="fa-solid fa-angle-up"></i></button>
-                        <button onClick={decrement}><i className="fa-solid fa-angle-down"></i></button>
+                        <button disabled={counter <= 1} onClick={decrement}><i className="fa-solid fa-angle-down"></i></button>
                     </div>
                     <div className="ButtonAddtoCart">
                         <Button onClick={addToCart} style={{ color: "black" }} variant="danger">Add to car</Button>
