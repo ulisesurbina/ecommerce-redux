@@ -54,10 +54,10 @@ const Login = () => {
                     Login
                 </Button>
                 <hr></hr>
-                <h5>Are you new to Acazon?</h5>
+                {/* <h5>Are you new to Acazon?</h5>
                 <Button variant="light" type="submit">
                     Create your account
-                </Button>
+                </Button> */}
             </Form>
         </div>
     );
